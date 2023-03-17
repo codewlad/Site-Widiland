@@ -1,0 +1,1221 @@
+/* Base CSS Start*/
+:root {
+	--body-bg: #fff;
+	--body-color: #000;
+	--link-color: #666;
+	--link-color-hover: #D2691E;
+	--el-bg: #ddd;
+	--menu-bg: rgb(210, 210, 210);
+	--main-box: #f1f1f1;
+	--main-h3: #D2691E;
+}
+
+.dark-mode:root {
+	--body-bg: #212529;
+	--body-color: #ccc;
+	--link-color: #ccc;
+	--link-color-hover: #D2691E;
+	--el-bg: #333;
+	--menu-bg: rgb(60, 60, 60);
+	--main-box: rgb(60, 60, 60);
+	--main-h3: #D2691E;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Signika Negative', sans-serif;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background-color: var(--body-bg);
+	color: var(--body-color);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+a {
+	color: var(--link-color-hover);
+}
+
+header, footer {
+	background: var(--el-bg);
+	color: var(--link-color);
+}
+
+header a, #hamNav label {
+	color: var(--link-color);
+}
+
+header {
+	padding: 20px;
+	-moz-transition: all 0.2s; /* Firefox 4 */
+	-webkit-transition: all 0.2s; /* Safari and Chrome */
+	-o-transition: all 0.2s; /* Opera */
+	transition: all 0.2s;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+	height: 100px;
+}
+
+.logo {
+	height: 50px;
+	filter: drop-shadow(1px 1px 1px #000);
+}
+
+header a {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+header a:hover {
+	color: var(--link-color-hover);
+}
+
+#hamItems ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: right;
+}
+
+#hamItems li, #hamItems a, #hamNav label {
+	-ms-transition: all 0.2s;  /* IE 9 */
+	-moz-transition: all 0.2s; /* Firefox 4 */
+	-webkit-transition: all 0.2s; /* Safari and Chrome */
+	-o-transition: all 0.2s; /* Opera */
+	transition: all 0.2s;	
+}
+
+#hamItems li {
+	padding: 5px 0;
+}
+
+#hamItems a, #hamNav label {
+	padding: 5px 10px;
+}
+
+#hamItems li, #hamNav label {
+	display: inline;
+	border-radius: 10px;
+}
+
+#hamItems li:hover, #hamNav label:hover {
+	background-color: var(--menu-bg);
+	-ms-transform: scale(0.9); /* IE 9 */
+  	-moz-transform: scale(0.9); /* Firefox 4 */
+	-webkit-transform: scale(0.9); /* Safari and Chrome */
+	-o-transform: scale(0.9); /* Opera */
+	transform: scale(0.9);
+}
+ 
+#hamNav label, #hamburger { 
+	display: none; 
+}
+
+#hamNav label:hover {
+	color: var(--link-color-hover);
+	background-color: var(--menu-bg);
+}
+
+#toolbar {
+	display: flex;
+	padding: 0 20px;
+	margin: 5px 0;
+	height: 35px;
+	align-items: center;
+	justify-content: right;
+	font-weight: bold;
+	color: var(--link-color);
+	gap: 50px;
+}
+
+#toolbar img {
+	vertical-align: middle;
+	transition: 0.2s;
+	opacity: 1;
+	margin-left: 5px;
+}
+
+#toolbar img:hover {
+	vertical-align: middle;
+	transition: 0.2s;
+	opacity: 0.7;
+	cursor: pointer;
+}
+
+#darkmode {
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+	color: var(--link-color);
+}
+
+#dark {
+	display: none;
+}
+
+#darkmode img {
+	height: 30px;
+	vertical-align: middle;
+	transition: 0.2s;
+	opacity: 1;
+}
+
+#darkmode img:hover {
+	transition: 0.2s;
+	opacity: 0.7;
+	cursor: pointer;
+}
+
+main {
+	display: flex;
+	flex: 1;
+	margin: 20px;
+	/* border: 1px solid blue; */
+}
+
+footer {
+	display: flex;
+	margin-top: auto;
+	padding: 20px;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	gap: 20px;
+	font-weight: bold;
+}
+
+.footerContacts {
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.footerContacts p {
+	display: flex;
+	align-items: center;
+}
+
+.footerContacts img {
+	width: 50px;
+	vertical-align: middle;
+}
+
+.footerContacts a {
+	text-decoration: none;
+	font-weight: bold;
+	color: var(--link-color);
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+.footerContacts a:hover {
+	opacity: 0.7;
+	transition: 0.2s;
+}
+
+#backtotop {
+	display: none;
+	background-color: black;
+	background-image: url("../img/top.png");
+	background-position: center;
+	background-size: 50px 50px;
+	border-radius: 65px;
+	box-shadow: 2px 3px 19px -2px rgba(0, 0, 0, .75);
+	cursor: pointer;
+	z-index: 3;
+	bottom: 14px;	
+	height: 40px;
+	position: fixed;
+	right: 22px;
+	width: 40px;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.imgW400 {
+	width: 100%;
+	max-width: 400px;
+	height: auto;
+}
+
+.imgW200 {
+	width: 100%;
+	max-width: 200px;
+	height: auto;
+}
+
+.imgW70 {
+	width: 100%;
+	max-width: 70px;
+	height: auto;
+}
+
+.imgW50 {
+	width: 100%;
+	max-width: 50px;
+	height: auto;
+}
+
+.imgW30 {
+	width: 100%;
+	max-width: 30px;
+	height: auto;
+	vertical-align: middle;
+}
+
+.mainBox {
+	background-color: var(--main-box);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.flexC20 {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.flexC20center {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	align-items: center;
+	width: -moz-fit-content;
+	width: fit-content;
+}
+
+.main-h3 {
+	color: var(--main-h3);
+	font-weight: bold;
+}
+
+.rCommon {
+	color: #666;
+}
+
+.rUncommon {
+	color: #9C3;
+}
+
+.rRare{
+	color: #0CF;
+}
+
+.rEpic {
+	color: rgb(224, 74, 242);
+}
+
+.rLegendary{
+	color: #FC0;
+}
+
+.rCommon, .rUncommon, .rRare, .rEpic, .rLegendary{
+	font-weight: bold;
+}
+
+.links {
+	cursor: pointer;
+	transition: 0.2s;
+	color: var(--link-color);
+}
+
+.links:hover {
+	opacity: 0.7;
+	transition: 0.2s;
+	color: var(--link-color-hover);
+	font-weight: bold;
+}
+/* Base CSS End */
+
+/* index.html Start */
+#containerHome {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	text-align: center;
+	width: 100%;
+}
+
+#containerImgHome {
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+/* index.html End */
+
+/* tutorials.html Start */
+#containerTutorials {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	text-align: center;
+	width: 100%;
+}
+
+.tutorials {
+	display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+
+#containerImgTutorials {
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.imgTuto {
+	display: flex;
+	flex-direction: column;
+}
+/* tutorials.html End */
+
+/* info.html Start */
+#containerInfo {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	text-align: center;
+	width: 100%;
+}
+
+.info {
+	display: flex;
+    flex-direction: column;
+    gap: 20px;
+	align-items: center;
+}
+
+.infoTable {
+	display: flex;
+	align-items: center;
+	border-radius: 10px;
+	padding: 2px 0;
+	gap: 5px;
+	font-size: 15px;
+}
+
+.infoTable:first-child {
+	padding-top: 0;
+}
+
+.even:nth-child(even) {
+	background-color: var(--el-bg);
+}
+
+.odd:nth-child(odd) {
+	background-color: var(--el-bg);
+}
+
+.infoTable span{
+	flex: 1 1 0;
+	width: 0;
+}
+
+#lw-full {
+	display: flex;
+	flex-direction: column;
+}
+
+#lw-mob1, #lw-mob2 {
+	display: none;
+	flex-direction: column;
+}
+
+.infoPlantationField {
+	display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+.infoPlantationField div {
+	width: 100%;
+}
+
+.infoStorage img {
+	width: 30px;
+	vertical-align: middle;
+}
+
+.infoStorageItems {
+	flex: 2 1 0;
+}
+
+.widthLevel, .widthEnergy, .widthResources, .widthReward, .widthField, .widthStorage {
+	width: 1000px;
+}
+
+.widthLevel, .widthResources {
+	gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+/* info.html End */
+
+/* tips.html Start */
+#containerTips {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	text-align: center;
+	width: 100%;
+}
+
+.tips {
+	display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+
+.referral {
+	color: red;
+	font-weight: bold;
+}
+/* tips.html End */
+
+/* chars.html Start */
+#containerChars {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	text-align: center;
+	width: 100%;
+}
+
+.chars {
+	display: flex;
+    flex-direction: row;
+	flex-wrap: wrap;
+    gap: 20px;
+}
+
+.boxChars {
+	max-width: calc(50% - 10px);
+	justify-content: space-between;
+}
+
+.containerImgChars {
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+#farmer, #breeder, #cook, #miner {
+	max-width: 350px;
+    width: 100%;
+}
+
+#farmerjob, #breederjob, #cookjob, #minerjob {
+	max-width: 300px;
+    width: 100%;
+}
+
+.infoChars {
+	display: flex;
+	flex-direction: column;
+}
+
+.infoChars p {
+	width: 100%;
+}
+/* chars.html End */
+
+/* lands.html Start */
+#containerLands {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	text-align: center;
+	width: 100%;
+}
+
+.lands {
+	display: flex;
+    flex-direction: row;
+	flex-wrap: wrap;
+    gap: 20px;
+}
+
+.boxLands {
+	width: calc(50% - 10px);
+	justify-content: space-between;
+}
+
+.contentLands {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.boxLandsImg {
+	max-width: 200px;
+    width: 100%;
+}
+
+.boxLandsImgSeeds {
+	width: 30px;
+	vertical-align: middle;
+}
+
+.infoLands {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.infoLands p {
+	width: 100%;
+}
+/* lands.html End */
+
+/* farms.html Start */
+#containerFarms {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	text-align: center;
+	width: 100%;
+}
+
+.farms {
+	display: flex;
+    flex-direction: row;
+	flex-wrap: wrap;
+    gap: 20px;
+}
+
+.farms div {
+	scroll-behavior: smooth;
+}
+
+.boxFarms {
+	width: calc(25% - 15px);
+	justify-content: space-between;
+	align-items: center;
+}
+
+.boxFarms img {
+	max-width: 200px;
+    width: 100%;
+}
+
+.infoFarms {
+	display: none; /* Hidden by default */
+	flex-direction: column;
+	gap: 20px;
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.95); /* Black w/ opacity */
+	align-items: center;
+	justify-content: normal;
+	padding: 20px;
+	-webkit-animation-name: zoom;
+	-webkit-animation-duration: 0.2s;
+	animation-name: zoom;
+	animation-duration: 0.2s;
+
+	@-webkit-keyframes zoom {
+		from {-webkit-transform:scale(0)} 
+		to {-webkit-transform:scale(1)}
+	}
+
+	@keyframes zoom {
+		from {transform:scale(0)} 
+		to {transform:scale(1)}
+	}
+}
+
+.infoFarmContainer {
+	display: flex;
+	gap: 20px;
+	width: 100%;
+    justify-content: center;
+	flex-wrap: wrap;
+}
+
+.infoFarmContainer div {
+	max-width: 340px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.infoFarmBox p, .infoFarmBox h3 {
+	height: 30px;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* farms.html End */
+
+/* machines.html Start */
+#containerMachines {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	text-align: center;
+	width: 100%;
+}
+
+.machines {
+	display: flex;
+    flex-direction: row;
+	flex-wrap: wrap;
+    gap: 20px;
+}
+
+.machines div {
+	scroll-behavior: smooth;
+}
+
+.boxMachines {
+	width: calc(25% - 15px);
+	justify-content: space-between;
+	align-items: center;
+}
+
+.boxMachines img {
+	max-width: 200px;
+    width: 100%;
+}
+
+.infoMachines {
+	display: none; /* Hidden by default */
+	flex-direction: column;
+	gap: 20px;
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.95); /* Black w/ opacity */
+	align-items: center;
+	justify-content: normal;
+	padding: 20px;
+	-webkit-animation-name: zoom;
+	-webkit-animation-duration: 0.2s;
+	animation-name: zoom;
+	animation-duration: 0.2s;
+
+	@-webkit-keyframes zoom {
+		from {-webkit-transform:scale(0)} 
+		to {-webkit-transform:scale(1)}
+	}
+
+	@keyframes zoom {
+		from {transform:scale(0)} 
+		to {transform:scale(1)}
+	}
+}
+
+.alignInfo {
+	display: flex;
+	gap: 20px;
+	width: 100%;
+	flex-direction: column;
+	align-items: center;
+}
+
+.infoMachineContainer {
+	display: flex;
+	gap: 20px;
+	width: 100%;
+    justify-content: center;
+	flex-wrap: wrap;
+}
+
+.infoMachineBox {
+	flex-direction: column;
+	max-width: 340px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.infoMachineBox p, .infoMachineBox h3 {
+	height: 30px;
+	display: flex;
+    align-items: center;
+}
+
+.subIngredients, .subUpgrades, .subPurchases, .subSlots {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.subUpgrades, .subPurchases, .subSlots {
+	margin-top: 10px;
+}
+/* machines.html End */
+
+/* tools.html Start */
+#containerTools {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	text-align: center;
+	width: 100%;
+}
+
+#searchItens {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	align-items: center;
+}
+
+#clearSearch {
+	max-width: 124px;
+	width: 100%;
+	padding: 5px;
+}
+
+#input {
+	max-width: 300px;
+	width: 100%;
+	padding: 5px;
+	text-align: center;
+}
+
+.imgInput {
+	vertical-align: middle;
+}
+
+#saidaTxtCalc {
+	border-radius: 10px;
+	background-color: var(--menu-bg);
+	width: 100%;
+	max-width: 300px;
+	padding: 20px;
+	position: relative;
+	margin: 20px 0;
+	left: 50%;
+	transform: translate(-50%, 0);
+	padding: 10px;
+	display: none;
+	cursor: pointer;
+}
+
+#saidaInfoItem {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#saidaTxtCalc a {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#searchItemInfo p{
+	height: 30px;
+	display: flex;
+	align-items: center;
+}
+
+#searchItemInfoSub {
+	display: flex;
+}
+
+#searchOtherItems {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 100%;
+}
+
+#searchOtherItemsSub{
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.searchRevenues {
+	background-color: var(--main-box);
+	border-radius: 10px;
+	padding: 10px;
+	max-width: 150px;
+	width: 100%;
+}
+
+.pTime {
+	text-align: center;
+	background: none;
+	border: 0;
+	font-size: 20px;
+	font-weight: bold;
+	width: 100%;
+	color: var(--body-color);
+}
+
+.pTimeTotal {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#pTotal {
+	color: rgb(84, 84, 84);
+}
+
+#searchProductsCalc img {
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
+}
+
+#calcImgBowl {
+	position: absolute;
+	top: 50px;
+	left: 56px;
+}
+
+#calcMachineImg {
+	position: relative;
+	z-index: -1;
+	margin: 0 auto;
+	max-width: 323px;
+	width: 100%;
+	height: 323px;
+	margin-top: 20px;
+}
+
+#calcMachineImg .bg {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-size: contain;
+	width: 100%;
+	height: 100%;
+	opacity: 0.9;
+	background-image: url(../img/machine.png);
+}
+
+#calcMachineName {
+	position: absolute;
+	display: none;
+	z-index: -1;
+	top: 0px;
+	width: 100%;
+	font-size: 20px;
+	font-weight: bold;
+	color: var(--body-color);
+	padding: 10px 0;
+}
+
+#calcBowl {
+	position: absolute;
+	display: none;
+	z-index: -1;
+	top: 120px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	width: 164px;
+	height: 109px;
+	background-image: url("../img/bowl.png");
+	background-size: cover;
+}
+
+#calcTime {
+	position: absolute;
+	display: none;
+	z-index: -1;
+	bottom: 0px;
+	/*border: 1px solid green;*/
+	margin: 0 auto;
+	width: 100%;
+}
+
+.backOp {
+	background-color: var(--main-box);
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: 0.8;
+	width: 100%;
+	height: 100%;
+}
+
+#calcModifiers {
+	width: 100%;
+	display: none;
+	gap: 5px;
+	flex-direction: column;
+	margin-top: 20px;
+}
+
+.calcCol1 {
+	display: inline-block;
+	padding: 4px 0;
+	width: 250px;
+	text-align: left;
+}
+
+.calcCol2 {
+	display: inline-block;
+	width: 70px;
+	text-align: center;
+
+}
+
+#calcLog {
+	display: none;
+	color: red;
+	font-weight: bold;
+	padding-top: 10px;
+}
+
+/* tools.html End */
+
+@media only screen and (max-width: 1500px) {
+	/* farms.html Start */
+	.infoFarmContainer {
+		width: 700px;
+	}
+
+	.infoFarmContainer div {
+		max-width: calc(50% - 10px);
+	}
+	/* farms.html End */
+}
+
+@media only screen and (max-width: 1300px) {
+	/* lands.html Start */
+	.contentLands {
+		flex-direction: column;
+	}
+	/* lands.html End */
+}
+
+@media only screen and (max-width: 1100px) {
+	/* info.html Start */
+	.widthLevel, .widthEnergy, .widthResources, .widthReward, .widthField, .widthStorage, .flexC20center {
+		width: 100%;
+	}
+	/* info.html End */
+}
+
+@media only screen and (max-width: 1000px) {
+	/* chars.html Start */
+	.boxChars {
+		max-width: 100%;
+	}
+	/* chars.html End */
+
+	/* lands.html Start */
+	.contentLands {
+		flex-direction: row;
+	}
+
+	.boxLands {
+		width: 100%;
+	}
+	/* lands.html End */
+
+	/* farms.html Start */
+	.boxFarms {
+		width: calc(33.5% - 15px);
+	}
+	/* farms.html End */
+
+	/* machines.html Start */
+	.boxMachines {
+		width: calc(33.5% - 15px);
+	}
+	/* machines.html End */
+}
+
+@media only screen and (max-width: 800px) {
+	/* farms.html Start */
+	.infoFarmContainer {
+		width: 100%;
+	}
+	/* farms.html End */
+}
+
+@media only screen and (max-width: 700px) {
+	/* Base CSS Start*/
+	header {
+		flex-direction: column;
+		justify-content: flex-start;
+		gap:5px;
+		padding: 5px 20px;
+	}
+
+	#hamNav {
+		width: 100%;
+		text-align: center;
+	}
+
+	#hamNav label {
+		display: block;
+	}
+	
+	#hamItems { 
+		display: none;
+	}
+
+	#hamItems a { 
+		display: block;
+	}
+
+	#hamItems ul { 
+		flex-direction: column;
+		list-style-type: none;
+		width: 100%;
+	}
+
+	#hamItems li {
+		padding: 0;
+	}
+
+	#hamItems li:hover, #hamNav label:hover {
+		background-color: var(--menu-bg);
+		-ms-transform: scale(1); /* IE 9 */
+		-moz-transform: scale(1); /* Firefox 4 */
+		-webkit-transform: scale(1); /* Safari and Chrome */
+		-o-transform: scale(1); /* Opera */
+		transform: scale(1);
+		padding-left: 10px;
+	}
+
+	#toolbar {
+		flex-direction: row;
+		height: auto;
+		gap: 9px;
+		justify-content: space-around;
+	}
+
+	#toolbar div {
+		text-align: right;
+		justify-content: right;
+	}
+	/* Base CSS End*/
+
+	/* info.html Start */
+	#lw-full {
+		display: none;
+	}
+	
+	#lw-mob1, #lw-mob2 {
+		display: flex;
+	}
+
+	.infoPlantationField {
+		flex-direction: column;
+	}
+
+	#infoStorageItems1, #infoStorageItems2 {
+		flex: 2 1 0;
+	}
+
+	.infoStorage p {
+		font-size: 15px;
+	}
+	/* info.html End */
+
+	/* lands.html Start */
+	.contentLands {
+		flex-direction: column;
+	}
+	/* lands.html End */
+
+	/* farms.html Start */
+	.boxFarms {
+		width: calc(50% - 10px);
+	}
+	
+	.infoFarmContainer div {
+		max-width: 100%;
+	}
+	/* farms.html End */
+
+	/* machines.html Start */
+	.boxMachines {
+		width: calc(50% - 10px);
+	}
+	
+	.infoMachineContainer div {
+		max-width: 100%;
+	}
+	/* machines.html End */
+}
+
+@media only screen and (max-width: 550px) {
+	/* main Start */
+	.footerContacts {
+		display: flex;
+		gap: 10px;
+		flex-wrap: wrap;
+		justify-content: center;
+		font-size: 14px;
+	}
+	/* main End */
+
+	/* info.html Start */
+	.infoStorage img {
+		width: 24px;
+	}
+	
+	.infoStorage p {
+		font-size: 13px;
+	}
+	/* info.html End */
+
+	/* chars.html Start */
+	.infoChars p span {
+		font-size: 13px;
+	}
+	/* chars.html End */
+
+	/* farms.html Start */
+	.boxFarms {
+		width: 100%;
+	}
+	/* farms.html End */
+
+	/* machines.html Start */
+	.boxMachines {
+		width: 100%;
+	}
+	/* machines.html End */
+}
